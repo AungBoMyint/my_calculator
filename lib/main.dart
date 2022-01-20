@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       valueListenable: Hive.box("database").listenable(keys: ["themes"]),
       builder: (context, box, child) {
         return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
             theme: box.get("themes", defaultValue: true)
                 ? lightTheme()
                 : darkTheme(),
